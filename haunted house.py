@@ -5,6 +5,23 @@ current_location = "entrance"
 inventory = []
 
 # Game world: rooms with descriptions, exits, and items
+
+
+
+"""game_world (outer dict)
+├── "entrance" (inner dict)
+│   ├── "description": string
+│   ├── "exits": another dict!
+│   └── "items": list
+├── "living_room" (inner dict)
+│   ├── "description": string
+│   ├── "exits": dict
+│   └── "items": list
+└── "bedroom" (inner dict)
+    ├── "description": string
+    ├── "exits": dict
+    └── "items": list
+"""
 game_world = {
     "entrance": {
         "description": "You stand before a creepy old haunted house. The door creaks open.",
@@ -14,7 +31,7 @@ game_world = {
     "living_room": {
         "description": "Dimly lit living room with dusty furniture. Stairs lead up; door back.",
         "exits": {"door": "entrance", "stairs": "bedroom"},
-        "items": ["candle"]
+        "items": ["candle", "key"]
     },
     "bedroom": {
         "description": "Spooky bedroom. A treasure chest hides under the bed.",
@@ -23,6 +40,24 @@ game_world = {
     }
 }
 
+"""1. exits.keys()
+exits is a dictionary like {"door": "entrance", "stairs": "bedroom"}
+
+.keys() returns just the keys as a view object: dict_keys(['door', 'stairs'])
+
+Think of it as: "Give me all direction names"
+
+2. ", ".join(...)
+join() takes an iterable (like the keys) and glues them together with a separator
+
+", " is the separator (comma + space)
+
+Converts ['door', 'stairs'] → "door, stairs"
+
+3. print("Exits:", ...)
+Adds the label "Exits:" + your joined string
+
+Final output: "Exits: door, stairs"""
 def show_status():
     print("\n" + game_world[current_location]["description"])
     exits = game_world[current_location]["exits"]
@@ -67,4 +102,7 @@ while True:
         current_location = game_world[current_location]["exits"][user_input]
         time.sleep(1)
     else:
-        print("Invalid move. Try again.")[web:2][page:1][page:2]
+        print("Invalid move. Try again.")
+
+
+

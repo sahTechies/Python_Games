@@ -1,5 +1,8 @@
 # Python_Games
 
+
+<!
+
 <B>Escape game <br></B>
 flow chart <br>
 Start → Door Choice (Left: Normal | Right: Enemy+20HP | Wait: Player-10HP)<br>
@@ -191,3 +194,4 @@ flowchart
 [Random event? (30%) ── Yes ──> Apply effect ──> Loop]
            No ──> 
     [clock += 2] ──> Loop
+>
