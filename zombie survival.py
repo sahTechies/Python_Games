@@ -40,9 +40,9 @@ print("You must escape the house in search of safety.\n")
 print("Zombies surrounded your house!\n")
 
 # Scenario: Zombie Survival
-//check status where you are
+#check status where you are
 while True:
-    print("1. Barrucade the doors")
+    print("1. Barricade the doors")
     print("2. Fight the zombies")
     print("3. Hide under bed")
     print("4. Escape through the window")
