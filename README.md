@@ -1,18 +1,31 @@
 # Python_Games
 
+A collection of text-based adventure games built with Python.
 
-<!
+## Games
 
-<B>Escape game <br></B>
-flow chart <br>
-Start → Door Choice (Left: Normal | Right: Enemy+20HP | Wait: Player-10HP)<br>
-     ↓ <br>
-Combat Loop (Player Attack → Enemy Counter → Check HP)<br>
-     ↓<br>
-End (Player ≤0: Defeat | Enemy ≤0: Escape)<br>
+### Escape Game
+A combat-based escape game where you wake up in a dark room and must fight your way out. Choose your door wisely and engage in strategic combat with an enemy. Use conservative or hard attacks to defeat the enemy before your health runs out.
 
+<details>
+<summary>View Flowchart</summary>
 
-haunted house
+```
+Start → Door Choice (Left: Normal | Right: Enemy+20HP | Wait: Player-10HP)
+     ↓ 
+Combat Loop (Player Attack → Enemy Counter → Check HP)
+     ↓
+End (Player ≤0: Defeat | Enemy ≤0: Escape)
+```
+</details>
+
+### Haunted House
+Explore a creepy haunted house room by room. Navigate through the entrance, living room, and bedroom to find the key and unlock your escape. Collect items like candles and keys while avoiding the supernatural dangers lurking in each room.
+
+<details>
+<summary>View Flowchart</summary>
+
+```
 
 [START]
    |
@@ -35,9 +48,16 @@ haunted house
    | No
 [Invalid Msg] --> Back to Loop
 [Main Loop END - theoretical, broken by conditions]
+```
+</details>
 
+### School Escape
+You're locked in school after hours with only 10 turns to escape! Navigate through classrooms, hallways, the library, and principal's office. Solve puzzles, find keys, and unlock doors before time runs out. Each wrong move costs precious time.
 
-school escape
+<details>
+<summary>View Flowchart</summary>
+
+```
        [START]
          |
     [Init: room=classroom, inv=[], time=0]
@@ -61,9 +81,16 @@ school escape
 [puzzle? --> Correct? --> Yes --> Reward/Unlock --> Loop]
               | No --> Wrong msg --> Loop
     [Invalid] --> Loop
+```
+</details>
 
+### Space Mission
+Embark on an interstellar adventure across the solar system. Travel between Earth, Moon, Mars, and asteroid fields while managing your oxygen supply. Collect artifacts, solve space puzzles, and navigate through asteroid fields to complete your mission and return home safely.
 
-space mission 
+<details>
+<summary>View Flowchart</summary>
+
+``` 
 
          [START]
            |
@@ -86,11 +113,16 @@ space mission
 ["scan"? ── Yes ── Puzzle? Correct? ──> Yes: Reward ──> Loop]
                 │ No: O2-=2 ──> Loop
 [Invalid ── O2-=2 ──> Loop]
+```
+</details>
 
+### Treasure Hunt
+Race against time to find buried treasure before pirates arrive! Explore a mysterious island with beaches, jungles, caves, and waterfalls. Collect map pieces, find a shovel, solve pirate riddles, and dig up the treasure—all within 8 turns before the pirates catch you.
 
-treasure hunt 
+<details>
+<summary>View Algorithm</summary>
 
-algrithm 
+**Algorithm:** 
 1. Initialize: current_location = "beach", inventory = [], pirate_timer = 8
 2. Print "Treasure Hunt: Find map pieces + shovel → dig treasure!"
 3. WHILE pirate_timer > 0:
@@ -106,7 +138,7 @@ algrithm
    j. pirate_timer -= 1
 4. IF pirate_timer <= 0: Pirates win, game over
 
-flowchart 
+**Flowchart:** 
          [START]
            |
 [Init: beach, inv=[], timer=8]
@@ -130,9 +162,16 @@ flowchart
 ["riddle"? ── Correct? ── Yes ──> Unlock reward ──> Loop]
                    No ──> Wrong, timer-- ──> Loop
 [Invalid ── timer-- ──> Loop]
+```
+</details>
 
+### Campus Simulator
+Survive a day at SRM Campus! Balance your GPA, energy, and cash as you navigate between hostel, classroom, library, canteen, and sports ground. Attend classes, study, eat, sleep, and play sports while managing your stats. Keep your GPA above 8.0 and energy above 0 to clear the semester with first class!
 
-campus simulator 
+<details>
+<summary>View Algorithm & Flowchart</summary>
+
+**Algorithm:** 
 BEGIN Campus Simulator
   SET current_location = "hostel"
   SET gpa = 8.5, energy = 100, cash = 200, clock = 8
@@ -172,8 +211,7 @@ BEGIN Campus Simulator
     OUTPUT "GPA dropped. Summer classes!"
 END
 
-
-flowchart 
+**Flowchart:** 
          [START]
            |
 [Initialize: hostel, gpa=8.5, energy=100, cash=200, clock=8]
@@ -194,4 +232,8 @@ flowchart
 [Random event? (30%) ── Yes ──> Apply effect ──> Loop]
            No ──> 
     [clock += 2] ──> Loop
->
+```
+</details>
+
+### Zombie Survival
+Wake up in a post-apocalyptic world surrounded by zombies! Make critical survival decisions: barricade doors, fight the undead, hide, or escape through the window. Manage your health as you battle waves of zombies. Defeat all 7 zombies to survive, or die trying in this intense survival horror game.
